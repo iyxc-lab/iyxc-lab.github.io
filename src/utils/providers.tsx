@@ -11,8 +11,8 @@ export const LayoutProvider = ({ children }: ComponentProps) => {
         <div>
             <Theme theme="g100">
                 <HeaderComponent />
+                <Content className="p-0">{children}</Content>
             </Theme>
-            <Content>{children}</Content>
         </div>
     )
 }
