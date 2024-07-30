@@ -15,7 +15,13 @@ import {
     SkipToContent,
 } from '@carbon/react'
 
-import { Notification, Switcher, UserAvatar } from '@carbon/icons-react'
+import { useTheme } from '@/utils/themeProvider'
+import {
+    Contrast,
+    Notification,
+    Translate,
+    UserAvatar,
+} from '@carbon/icons-react'
 import Link from 'next/link'
 
 interface RenderProps {
@@ -24,6 +30,11 @@ interface RenderProps {
 }
 
 const Header = () => {
+    const { theme, toggleTheme } = useTheme()
+
+    const handleThemeChange = () => {
+        toggleTheme(theme === 'white' ? 'g100' : 'white')
+    }
     return (
         <HeaderContainer
             render={({
@@ -77,7 +88,13 @@ const Header = () => {
                             aria-label="App Switcher"
                             tooltipAlignment="end"
                         >
-                            <Switcher size={20} />
+                            <Translate size={20} />
+                        </HeaderGlobalAction>
+                        <HeaderGlobalAction
+                            aria-label="App Switcher"
+                            tooltipAlignment="end"
+                        >
+                            <Contrast size={20} onClick={handleThemeChange} />
                         </HeaderGlobalAction>
                     </HeaderGlobalBar>
                 </CarbonHeader>
