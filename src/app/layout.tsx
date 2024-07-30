@@ -1,4 +1,5 @@
-import { LayoutProvider } from '@/utils/providers'
+import { LayoutProvider } from '@/utils/layoutProvider'
+import { ThemeProdiver } from '@/utils/themeProvider'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.scss'
@@ -18,7 +19,9 @@ const RootLayout = ({
     return (
         <html lang="en" suppressHydrationWarning>
             <body className={inter.className}>
-                <LayoutProvider>{children}</LayoutProvider>
+                <ThemeProdiver>
+                    <LayoutProvider>{children}</LayoutProvider>
+                </ThemeProdiver>
             </body>
         </html>
     )
