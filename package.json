@@ -14,9 +14,11 @@
         "@carbon/pictograms-react": "^11.63.0",
         "@carbon/react": "1.62.0",
         "@types/carbon__pictograms-react": "^11.46.6",
+        "i18next": "^23.12.2",
         "next": "14.2.5",
         "react": "^18",
         "react-dom": "^18",
+        "react-i18next": "^15.0.0",
         "sass": "1.63.6"
     },
     "devDependencies": {
