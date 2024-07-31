@@ -23,6 +23,8 @@ import {
     UserAvatar,
 } from '@carbon/icons-react'
 import Link from 'next/link'
+import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 interface RenderProps {
     isSideNavExpanded: boolean
@@ -31,10 +33,22 @@ interface RenderProps {
 
 const Header = () => {
     const { theme, toggleTheme } = useTheme()
+    const { t, ready, i18n } = useTranslation()
+    const [locale, setLocale] = useState(i18n.language)
 
     const handleThemeChange = () => {
         toggleTheme(theme === 'white' ? 'g100' : 'white')
     }
+    const handleLocaleChange = () => {
+        if (locale === 'zh') {
+            i18n.changeLanguage('en')
+            setLocale('en')
+        } else {
+            i18n.changeLanguage('zh')
+            setLocale('zh')
+        }
+    }
+
     return (
         <HeaderContainer
             render={({
@@ -53,7 +67,7 @@ const Header = () => {
                     </Link>
                     <HeaderNavigation aria-label="AI LifeScil">
                         <Link href="/products" passHref legacyBehavior>
-                            <HeaderMenuItem>Products</HeaderMenuItem>
+                            <HeaderMenuItem> {t('home.title')}</HeaderMenuItem>
                         </Link>
                     </HeaderNavigation>
                     <SideNav
@@ -87,6 +101,7 @@ const Header = () => {
                         <HeaderGlobalAction
                             aria-label="App Switcher"
                             tooltipAlignment="end"
+                            onClick={handleLocaleChange}
                         >
                             <Translate size={20} />
                         </HeaderGlobalAction>
