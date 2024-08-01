@@ -31,6 +31,9 @@
 .border-top {
     border-top: solid 1px #dddddd;
 }
+.border-bottom {
+    border-bottom: solid 1px #dddddd;
+}
 .boder-product {
     border: solid 1px #dddddd;
     border-left: none;
@@ -54,6 +57,9 @@
     margin-top: 10px;
 }
 
+.cds--content {
+    padding: 0;
+}
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';

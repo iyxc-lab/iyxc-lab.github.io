@@ -12,11 +12,15 @@ const en = {
             lookProduct: '查看产品',
             lookSolution: '查看解决方案',
             ourTeam: '我们的团队',
+            more: '了解更多',
         },
         product: {
-            product1: '产品名称1',
-            product2: '产品名称2',
-            product3: '产品名称3',
+            product1: '真实世界研究云平台｜RWS',
+            product2: '中药药性研究平台｜ MOA',
+            product3: '健管平台｜HMO',
+            title: '这这里是产品这这里是产品',
+            introduction:
+                '这这里是产品简介, 这里是产品简介, 这里是产品简介, 这里是产品简介, 这里是产品简介, 这里是产品简介, ',
         },
         solution: {
             title: '解决方案',
@@ -44,6 +48,13 @@ const en = {
             media: '媒体',
             weibo: '微博',
             wechat: '微信',
+        },
+        headers: {
+            home: '首页',
+            product: '产品',
+            solution: '解决方案',
+            about: '关于',
+            news: '新闻',
         },
     },
 }

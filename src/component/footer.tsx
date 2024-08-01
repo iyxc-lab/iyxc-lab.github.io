@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next'
 const BottomNav = () => {
     const { t } = useTranslation()
     return (
-        <div className=" p-20 border-top text-xs w-full">
+        <div className=" p-20 text-xs w-full">
             <FlexGrid>
                 <Row>
                     <Column lg={2}>

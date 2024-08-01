@@ -1,7 +1,7 @@
 'use client'
 
-import BottomNav from '@/ui/footer'
-import HeaderComponent from '@/ui/header'
+import BottomNav from '@/component/footer'
+import HeaderComponent from '@/component/header'
 import { Content } from '@carbon/react'
 
 interface LayoutProps {

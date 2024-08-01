@@ -1,7 +1,7 @@
 'use client'
-import ContentHead from '@/ui/containerHead'
-import Product from '@/ui/product'
-import Solution from '@/ui/solution'
+import ContentHead from '@/component/containerHead'
+import Product from '@/component/product'
+import Solution from '@/component/solution'
 import { SkipForward } from '@carbon/icons-react'
 import { ScientificComputing } from '@carbon/pictograms-react'
 import { Button, Column, FlexGrid, Row } from '@carbon/react'
@@ -13,7 +13,7 @@ const Page = () => {
         <div>
             <ContentHead className={'h-616 m-0 bg-[#434343]'}>
                 <div className="px-20">
-                    <FlexGrid fullWidth>
+                    <FlexGrid>
                         <Row>
                             <Column lg={10}>
                                 <div className="py-16 max-w-616">
@@ -106,7 +106,7 @@ const Page = () => {
                 />
             </div>
             {/* 我们的团队 */}
-            <div className="h-400">
+            <div className="h-400 border-bottom">
                 <FlexGrid className="p-20">
                     <Row>
                         <Column lg={8}>
