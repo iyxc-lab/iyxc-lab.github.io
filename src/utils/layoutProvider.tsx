@@ -1,5 +1,6 @@
 'use client'
 
+import BottomNav from '@/ui/footer'
 import HeaderComponent from '@/ui/header'
 import { Content } from '@carbon/react'
 
@@ -11,6 +12,7 @@ export const LayoutProvider = ({ children }: LayoutProps) => {
         <div>
             <HeaderComponent />
             <Content className="p-0">{children}</Content>
+            <BottomNav />
         </div>
     )
 }
