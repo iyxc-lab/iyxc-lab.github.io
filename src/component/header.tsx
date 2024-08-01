@@ -86,19 +86,22 @@ const Header = () => {
                         </HeaderMenuItem>
                         <HeaderMenuItem
                             aria-label="AI LifeScil"
-                            href="/products"
+                            isActive={urlRoute('/solution')}
+                            href="/solution"
                         >
                             {t('headers.solution')}
                         </HeaderMenuItem>
                         <HeaderMenuItem
                             aria-label="AI LifeScil"
-                            href="/products"
+                            href="/news"
+                            isActive={urlRoute('/news')}
                         >
                             {t('headers.news')}
                         </HeaderMenuItem>
                         <HeaderMenuItem
                             aria-label="AI LifeScil"
-                            href="/products"
+                            isActive={urlRoute('/about')}
+                            href="/about"
                         >
                             {t('headers.about')}
                         </HeaderMenuItem>

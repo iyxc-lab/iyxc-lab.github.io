@@ -1,14 +1,20 @@
 'use client'
 
 import { ArrowRight } from '@carbon/icons-react'
-import { HardDriveNetwork } from '@carbon/pictograms-react'
+import {
+    DesignResearch,
+    FlashStorage,
+    HardDriveNetwork,
+    Pills,
+} from '@carbon/pictograms-react'
 import { useTranslation } from 'react-i18next'
 
 const Technology: React.FC<{
     type?: number
     name?: string
     content?: string
-}> = ({ type, name, content }) => {
+    label?: string
+}> = ({ type, name, content, label }) => {
     const { t } = useTranslation()
     return (
         <div
@@ -21,9 +27,19 @@ const Technology: React.FC<{
                 </div>
             </div>
             <div className="flex-mode">
-                <div>
-                    <HardDriveNetwork width={40} height={40} />
-                </div>
+                {label == 'Product' ? (
+                    <div>
+                        {type == 1 && <DesignResearch width={40} height={40} />}
+                        {type == 2 && <Pills width={40} height={40} />}
+                    </div>
+                ) : (
+                    <div>
+                        {type == 1 && (
+                            <HardDriveNetwork width={40} height={40} />
+                        )}
+                        {type == 2 && <FlashStorage width={40} height={40} />}
+                    </div>
+                )}
                 <div>
                     <ArrowRight size={40} />
                 </div>
