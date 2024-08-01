@@ -1,5 +1,59 @@
 @use '@carbon/react';
+@use '@carbon/react/scss/grid';
+@include grid.flex-grid();
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.boder-product {
+    border: solid 1px #dddddd;
+    border-left: none;
+    border-right: none;
+    width: calc(100% / 3);
+    min-width: calc(100% / 3);
+    max-width: calc(100% / 3);
+}
+.boder-product-moddle {
+    border: solid 1px #dddddd;
+    width: calc(100% / 3);
+    min-width: calc(100% / 3);
+    max-width: calc(100% / 3);
+}
+.boder-solution {
+    border: solid 1px #dddddd;
+    border-left: none;
+    border-right: none;
+    width: calc(100% / 2);
+    min-width: calc(100% / 2);
+    max-width: calc(100% / 2);
+}
+
+.border-right {
+    border-right: solid 1px #dddddd;
+}
+.border-top {
+    border-top: solid 1px #dddddd;
+}
+.boder-product {
+    border: solid 1px #dddddd;
+    border-left: none;
+    border-right: none;
+    width: calc(100% / 3);
+    min-width: calc(100% / 3);
+    max-width: calc(100% / 3);
+}
+.flex-mode {
+    display: flex;
+    flex-direction: row;
+    // align-items: center;
+    justify-content: space-between;
+}
+
+.product-item {
+    height: 400px;
+    padding: 40px;
+}
+.footer-margin {
+    margin-top: 10px;
+}
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
