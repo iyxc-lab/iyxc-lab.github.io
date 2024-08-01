@@ -14,10 +14,10 @@ const Product: React.FC<{
     return (
         <div
             className={`${
-                type == 2 ? 'boder-product-moddle' : ' boder-product'
-            } product-item `}
+                type == 2 ? 'boder-product-moddle' : 'boder-product'
+            } product-item`}
         >
-            <div style={{ height: '300px' }}>
+            <div className="h-72">
                 {type == 1 && <DesignResearch height={92} width={92} />}
                 {type == 2 && <TelemedicineMobile height={92} width={92} />}
                 {type == 3 && <Pills height={92} width={92} />}

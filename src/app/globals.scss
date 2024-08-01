@@ -6,25 +6,10 @@
     border: solid 1px #dddddd;
     border-left: none;
     border-right: none;
-    width: calc(100% / 3);
-    min-width: calc(100% / 3);
-    max-width: calc(100% / 3);
 }
 .boder-product-moddle {
     border: solid 1px #dddddd;
-    width: calc(100% / 3);
-    min-width: calc(100% / 3);
-    max-width: calc(100% / 3);
 }
-.boder-solution {
-    border: solid 1px #dddddd;
-    border-left: none;
-    border-right: none;
-    width: calc(100% / 2);
-    min-width: calc(100% / 2);
-    max-width: calc(100% / 2);
-}
-
 .border-right {
     border-right: solid 1px #dddddd;
 }
@@ -34,32 +19,26 @@
 .border-bottom {
     border-bottom: solid 1px #dddddd;
 }
-.boder-product {
-    border: solid 1px #dddddd;
-    border-left: none;
-    border-right: none;
-    width: calc(100% / 3);
-    min-width: calc(100% / 3);
-    max-width: calc(100% / 3);
-}
 .flex-mode {
     display: flex;
     flex-direction: row;
     // align-items: center;
     justify-content: space-between;
 }
-
+.flex-percent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
 .product-item {
     height: 400px;
     padding: 40px;
+    flex: 1;
 }
 .footer-margin {
     margin-top: 10px;
 }
 
-.cds--content {
-    padding: 0;
-}
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';

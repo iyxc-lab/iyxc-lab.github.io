@@ -1,6 +1,7 @@
 'use client'
 
 import { ArrowRight } from '@carbon/icons-react'
+import { HardDriveNetwork } from '@carbon/pictograms-react'
 import { useTranslation } from 'react-i18next'
 
 const Technology: React.FC<{
@@ -11,19 +12,17 @@ const Technology: React.FC<{
     const { t } = useTranslation()
     return (
         <div
-            className={`${
-                type == 1 ? 'border-right ' : ''
-            } boder-solution h-400 p-20`}
+            className={`${type == 1 ? 'border-right' : ''} boder-product  product-item`}
         >
-            <div style={{ height: '240px' }}>
+            <div className="h-72">
                 <div>
                     <p className="text-3xl">{name}</p>
-                    <p>{content}</p>
+                    <p className="mt-8">{content}</p>
                 </div>
             </div>
             <div className="flex-mode">
                 <div>
-                    <p>{t('solution.searchProduct')}</p>
+                    <HardDriveNetwork width={40} height={40} />
                 </div>
                 <div>
                     <ArrowRight size={40} />

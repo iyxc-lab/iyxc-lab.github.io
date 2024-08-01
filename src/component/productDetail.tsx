@@ -9,8 +9,8 @@ const ProductDetail: React.FC<{
 }> = ({ details }) => {
     return (
         <Grid>
-            <Column lg={16} style={{ paddingTop: '40px' }}>
-                <div>{t('fontPage.introduction')}</div>
+            <Column lg={16} className="p-10">
+                <div>{details}</div>
                 <div>
                     <Button
                         className="mt-20"

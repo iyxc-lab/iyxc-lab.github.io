@@ -18,6 +18,7 @@ import {
 import { useTheme } from '@/utils/themeProvider'
 import { Contrast, Translate } from '@carbon/icons-react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -29,6 +30,14 @@ interface RenderProps {
 const Header = () => {
     const { theme, toggleTheme } = useTheme()
     const { t, ready, i18n } = useTranslation()
+    const pathname = usePathname()
+    const urlRoute = (route: any) => {
+        if (pathname && pathname.endsWith(route)) {
+            return true
+        } else {
+            return false
+        }
+    }
     const [locale, setLocale] = useState(i18n.language)
 
     const handleThemeChange = () => {
@@ -61,11 +70,16 @@ const Header = () => {
                         <HeaderName prefix="AI LifeSci">Web Portal</HeaderName>
                     </Link>
                     <HeaderNavigation className="z-20">
-                        <HeaderMenuItem aria-label="AI LifeScil" href="/">
+                        <HeaderMenuItem
+                            aria-label="AI LifeScil"
+                            isActive={urlRoute('/')}
+                            href="/"
+                        >
                             {t('headers.home')}
                         </HeaderMenuItem>
                         <HeaderMenuItem
                             aria-label="AI LifeScil"
+                            isActive={urlRoute('/products')}
                             href="/products"
                         >
                             {t('headers.product')}

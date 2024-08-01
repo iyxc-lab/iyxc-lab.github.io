@@ -64,28 +64,34 @@ const Page = () => {
                         </TabList>
                         <TabPanels>
                             <TabPanel>
-                                <ProductDetail />
+                                <ProductDetail
+                                    details={t('product.introduceDetails1')}
+                                />
                             </TabPanel>
                             <TabPanel>
-                                <ProductDetail />
+                                <ProductDetail
+                                    details={t('product.introduceDetails2')}
+                                />
                             </TabPanel>
                             <TabPanel>
-                                <ProductDetail />
+                                <ProductDetail
+                                    details={t('product.introduceDetails3')}
+                                />
                             </TabPanel>
                         </TabPanels>
                     </Tabs>
                 </Column>
             </div>
-            <div className="h-400 flex w-full flex-wrap justify-start">
+            <div className="h-400 flex">
                 <Technology
                     type={1}
-                    name={t('solution.solution1')}
-                    content={t('solution.overview')}
+                    name={t('technology.name1')}
+                    content={t('technology.overview')}
                 />
                 <Technology
-                    type={1}
-                    name={t('solution.solution1')}
-                    content={t('solution.overview')}
+                    type={2}
+                    name={t('technology.name2')}
+                    content={t('technology.overview')}
                 />
             </div>
         </div>

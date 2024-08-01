@@ -12,14 +12,12 @@ const Product: React.FC<{
     const { t } = useTranslation()
     return (
         <div
-            className={`${
-                type == 1 ? 'border-right ' : ''
-            } boder-solution h-400 p-20`}
+            className={`${type == 1 ? 'border-right' : ''} boder-product  product-item`}
         >
-            <div className="flex-mode" style={{ height: '240px' }}>
+            <div className="flex-mode h-72">
                 <div>
-                    <p>{name}</p>
-                    <p>{content}</p>
+                    <p className="text-2xl">{name}</p>
+                    <p className="mt-8">{content}</p>
                 </div>
                 <div>
                     {type == 1 && <DesignResearch height={92} width={92} />}

@@ -64,7 +64,7 @@ const Page = () => {
                     </Row>
                 </FlexGrid>
             </div>
-            <div className="h-400 flex w-full flex-wrap justify-start">
+            <div className="h-400 flex">
                 <Product type={1} name={t('product.product1')} />
                 <Product type={2} name={t('product.product2')} />
                 <Product type={3} name={t('product.product3')} />
@@ -93,7 +93,7 @@ const Page = () => {
                     </Row>
                 </FlexGrid>
             </div>
-            <div className="h-400 bg-[#434343] flex w-full flex-wrap justify-start">
+            <div className="h-400 bg-[#434343] flex">
                 <Solution
                     type={1}
                     name={t('solution.solution1')}
