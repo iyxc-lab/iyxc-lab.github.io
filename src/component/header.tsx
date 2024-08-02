@@ -16,13 +16,9 @@ import {
 } from '@carbon/react'
 
 import { useTheme } from '@/utils/themeProvider'
-import {
-    Contrast,
-    Notification,
-    Translate,
-    UserAvatar,
-} from '@carbon/icons-react'
+import { Contrast, Translate } from '@carbon/icons-react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -34,6 +30,14 @@ interface RenderProps {
 const Header = () => {
     const { theme, toggleTheme } = useTheme()
     const { t, ready, i18n } = useTranslation()
+    const pathname = usePathname()
+    const urlRoute = (route: any) => {
+        if (pathname && pathname.endsWith(route)) {
+            return true
+        } else {
+            return false
+        }
+    }
     const [locale, setLocale] = useState(i18n.language)
 
     const handleThemeChange = () => {
@@ -65,10 +69,42 @@ const Header = () => {
                     <Link href="/" passHref legacyBehavior>
                         <HeaderName prefix="AI LifeSci">Web Portal</HeaderName>
                     </Link>
-                    <HeaderNavigation aria-label="AI LifeScil">
-                        <Link href="/products" passHref legacyBehavior>
-                            <HeaderMenuItem> {t('home.title')}</HeaderMenuItem>
-                        </Link>
+                    <HeaderNavigation className="z-20">
+                        <HeaderMenuItem
+                            aria-label="AI LifeScil"
+                            isActive={urlRoute('/')}
+                            href="/"
+                        >
+                            {t('headers.home')}
+                        </HeaderMenuItem>
+                        <HeaderMenuItem
+                            aria-label="AI LifeScil"
+                            isActive={urlRoute('/products')}
+                            href="/products"
+                        >
+                            {t('headers.product')}
+                        </HeaderMenuItem>
+                        <HeaderMenuItem
+                            aria-label="AI LifeScil"
+                            isActive={urlRoute('/solution')}
+                            href="/solution"
+                        >
+                            {t('headers.solution')}
+                        </HeaderMenuItem>
+                        <HeaderMenuItem
+                            aria-label="AI LifeScil"
+                            href="/news"
+                            isActive={urlRoute('/news')}
+                        >
+                            {t('headers.news')}
+                        </HeaderMenuItem>
+                        <HeaderMenuItem
+                            aria-label="AI LifeScil"
+                            isActive={urlRoute('/about')}
+                            href="/about"
+                        >
+                            {t('headers.about')}
+                        </HeaderMenuItem>
                     </HeaderNavigation>
                     <SideNav
                         aria-label="Side navigation"
@@ -77,6 +113,11 @@ const Header = () => {
                     >
                         <SideNavItems>
                             <HeaderSideNavItems>
+                                <Link href="/" passHref legacyBehavior>
+                                    <HeaderMenuItem>首页</HeaderMenuItem>
+                                </Link>
+                            </HeaderSideNavItems>
+                            <HeaderSideNavItems>
                                 <Link href="/products" passHref legacyBehavior>
                                     <HeaderMenuItem>Products</HeaderMenuItem>
                                 </Link>
@@ -84,20 +125,6 @@ const Header = () => {
                         </SideNavItems>
                     </SideNav>
                     <HeaderGlobalBar>
-                        <HeaderGlobalAction
-                            aria-label="Notifications"
-                            tooltipAlignment="center"
-                            className="action-icons"
-                        >
-                            <Notification size={20} />
-                        </HeaderGlobalAction>
-                        <HeaderGlobalAction
-                            aria-label="User Avatar"
-                            tooltipAlignment="center"
-                            className="action-icons"
-                        >
-                            <UserAvatar size={20} />
-                        </HeaderGlobalAction>
                         <HeaderGlobalAction
                             aria-label="App Switcher"
                             tooltipAlignment="end"

@@ -4,7 +4,7 @@ const ContentHead: React.FC<{
     className?: string[] | string
 }> = ({ children, className }) => {
     return (
-        <Grid className="p-0" fullWidth>
+        <Grid className="p-0" fullWidth style={{ padding: 0 }}>
             <Column lg={16} md={8} sm={4} className={`${className}`}>
                 {children}
             </Column>

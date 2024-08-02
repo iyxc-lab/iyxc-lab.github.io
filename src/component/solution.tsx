@@ -1,7 +1,7 @@
 'use client'
 
 import { ArrowRight } from '@carbon/icons-react'
-import { DesignResearch, TelemedicineMobile } from '@carbon/pictograms-react'
+import { Agility, GraphicDesign } from '@carbon/pictograms-react'
 import { useTranslation } from 'react-i18next'
 
 const Product: React.FC<{
@@ -12,18 +12,16 @@ const Product: React.FC<{
     const { t } = useTranslation()
     return (
         <div
-            className={`${
-                type == 1 ? 'border-right ' : ''
-            } boder-solution h-400 p-20`}
+            className={`${type == 1 ? 'border-right' : ''} boder-product  product-item`}
         >
-            <div className="flex-mode" style={{ height: '240px' }}>
+            <div className="flex-mode h-72">
                 <div>
-                    <p>{name}</p>
-                    <p>{content}</p>
+                    <p className="text-2xl">{name}</p>
+                    <p className="mt-8">{content}</p>
                 </div>
                 <div>
-                    {type == 1 && <DesignResearch height={92} width={92} />}
-                    {type == 2 && <TelemedicineMobile height={92} width={92} />}
+                    {type == 1 && <GraphicDesign height={92} width={92} />}
+                    {type == 2 && <Agility height={92} width={92} />}
                 </div>
             </div>
             <div className="flex-mode">
